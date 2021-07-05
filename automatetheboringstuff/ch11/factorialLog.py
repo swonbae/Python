@@ -1,3 +1,5 @@
+# Derived from 'https://automatetheboringstuff.com/2e/chapter11/' by Al Sweigart
+
 import logging
 
 logging.basicConfig(filename='myLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
