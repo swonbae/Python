@@ -1,4 +1,4 @@
-# Derived from 'https://automatetheboringstuff.com/2e/chapter11/' by Al Sweigart
+# Derived from 'https://automatetheboringstuff.com/'
 
 import logging
 
