@@ -1,9 +1,9 @@
 #! python3
 # searchpypi.py - Opens several search results.
+# Original code from 'https://automatetheboringstuff.com/'
 # Updated by SeungWon Bae
 
 import requests, sys, webbrowser, bs4
-# import os
 
 print('Searching...')   # display text while downloading the search result page
 
@@ -16,7 +16,7 @@ res = requests.get(addr)
 res.raise_for_status()
 
 # # print(res.text)
-# # save the result to HTML file
+# # save the search result page to HTML file
 # resFile = open('searchResult.html', 'wb')
 # for chunk in res.iter_content(100000):
 #     # print(chunk)
