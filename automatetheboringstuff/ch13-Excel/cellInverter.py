@@ -29,9 +29,8 @@ sheet2 = wb2.active
 
 print(f'Inverting the row and column of the cells in the spreadsheet...')
 
-for i, column in enumerate(sheet.columns):
-    for j, cell in enumerate(column):
-        # print(cell.value)
-        sheet2.cell(row=i+1, column=j+1).value = cell.value
+for i, column in enumerate(sheet.columns, 1):
+    for j, cell in enumerate(column, 1):
+        sheet2.cell(row=i, column=j).value = cell.value
 
 wb2.save(f'Inverted_{filename}')
