@@ -1,4 +1,4 @@
-# Ch13 Practice Project - Blank Row Inserter
+# Ch13 - Practice Project: Blank Row Inserter
 # Solution by SeungWon Bae
 
 import openpyxl, sys
@@ -13,9 +13,9 @@ if len(sys.argv) == 4:
         m = int(sys.argv[2])
         filename = sys.argv[3]
     except:
-        quit("Wrong argument type: please attach two numbers and a Excel filename as command line arguments")
+        quit("Wrong argument type: please attach two numbers and an Excel filename as command line arguments")
 else:
-    quit("Insufficient arguments: please attach two numbers and a Excel filename as command line arguments")
+    quit("Insufficient arguments: please attach two numbers and an Excel filename as command line arguments")
 
 print(f'Opening {filename}...')
 
