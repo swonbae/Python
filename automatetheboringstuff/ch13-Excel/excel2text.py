@@ -1,7 +1,7 @@
-# Ch13 - Practice Project: Spreadsheet Cell Inverter
+# Ch13 - Practice Project: Spreadsheet to Text Files
 # Solution by SeungWon Bae
 
-import openpyxl, sys
+import openpyxl, sys, os
 
 def quit(message):
     print(message)
@@ -24,15 +24,14 @@ except:
 
 sheet = wb.active
 
-wb2 = openpyxl.Workbook()
-sheet2 = wb2.active
-
-print(f'Inverting the row and column of the cells in the spreadsheet...')
+filename = os.path.splitext(filename)[0]    # remove the extension
 
 for i, column in enumerate(sheet.columns, 1):
-    for j, cell in enumerate(column, 1):
-        sheet2.cell(row=i, column=j).value = cell.value
-
-wb2.save(f'Inverted_{filename}')
-
+    textfile = f'{filename}_{i}.txt'
+    print(f'Writing {textfile}...')
+    
+    with open(textfile, 'w', encoding='utf8') as f:
+        for row in column:
+            f.write(f'{row.value}\n')
+            
 print('Done')
