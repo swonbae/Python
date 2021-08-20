@@ -134,3 +134,8 @@ dmypy.json
 *.html
 *.xlsx
 *.pdf
+*.docx
+convertWordToPDF.py
+
+# Exception
+!invitations_template.docx
