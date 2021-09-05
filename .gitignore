@@ -137,5 +137,7 @@ dmypy.json
 *.docx
 convertWordToPDF.py
 
+Pandas/Tutorial/data/
+
 # Exception
 !invitations_template.docx
