@@ -98,6 +98,42 @@ def update_user(id):
             status=500,
             mimetype='application/json'
         )
+
+@app.route('/users/<id>', methods=['DELETE'])
+def delete_user(id):
+    try:
+        dbResponse = db.users.delete_one(
+            {'_id': ObjectId(id)}
+        )
+        for attr in dir(dbResponse):
+            print(f'{attr}')
+        if dbResponse.deleted_count == 1:
+            return Response(
+                response=json.dumps({
+                    'message': 'user deleted',
+                    'id': f'{id}'
+                }),
+                status=200,
+                mimetype='application/json'
+            )
+        else:
+            return Response(
+                response=json.dumps({
+                    'message': 'user not found',
+                    'id': f'{id}'
+                }),
+                status=200,
+                mimetype='application/json'
+            )
+    except Exception as ex:
+        print(f'DELETE Error - {ex}')
+        return Response(
+            response=json.dumps({
+                'message': 'cannot delete user',
+            }),
+            status=500,
+            mimetype='application/json'
+        )
 ##############################################
 
 
